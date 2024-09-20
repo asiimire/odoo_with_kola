@@ -1,20 +1,34 @@
 <odoo>
-    <record id="view_purchase_bid_form" model="ir.ui.view">
+    <record id="view_purchase_bid_tree" model="ir.ui.view">
         <field name="name">
-            purchase.bid.form
+            purchase.bid.tree
         </field>
         <field name="model">
             purchase.bid
         </field>
         <field name="arch" type="xml">
             <form>
-                <group>
+                <tree>
                     <field name="rfq_id"/>
                     <field name="vendor_id"/>
                     <field name="bid_amount"/>
                     <field name="bid_date"/>
-                </group>
+                </tree>
             </form>
         </field>
     </record>
+
+    <record id="view_purchase_bid_form" model="ir.ui.view">
+        <field name="name">purchase.bid.form</field>
+        <field name="model">purchase.bid</field>
+        <field name="arch" type="xml">
+            <form string="Vendor Bid">
+                <field name="name"/>
+                <field name="vendor_id"/>
+                <field name="bid_amount"/>
+                <field name="purchase_order_id"/>
+            </form>
+        </field>
+    </record>
+
 </odoo>

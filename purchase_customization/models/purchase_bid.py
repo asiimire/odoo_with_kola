@@ -1,12 +1,10 @@
-from dataclasses import fields
-from email.policy import default
-
+from odoo import models, fields
 
 class PurchaseBid(models.Model):
     _name = 'purchase.bid'
-    _description = 'Bid for RFQ'
+    _description = 'Vendor Bid'
 
-    rfq_id = fields.Many2one('purchase.order', string="RFQ", required=True)
+    name = fields.Char(string="Bid Reference", required=True)
     vendor_id = fields.Many2one('res.partner', string="Vendor", required=True)
     bid_amount = fields.Float(string="Bid Amount", required=True)
-    bid_date = fields.Date(string="Bid Date", default=fields.Date.today)
+    purchase_order_id = fields.Many2one('purchase.order', string="Purchase Order")

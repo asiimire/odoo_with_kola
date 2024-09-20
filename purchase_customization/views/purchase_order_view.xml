@@ -9,6 +9,7 @@
         <field name="arch" type="xml">
             <xpath expr="//field[@name='partner_id']" position="after">
                 <field name="vendor_ids" widget="many2many_tags"/>
+                <field name="winning_bid_id"/>
             </xpath>
         </field>
     </record>
