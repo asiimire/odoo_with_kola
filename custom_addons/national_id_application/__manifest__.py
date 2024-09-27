@@ -6,7 +6,7 @@
     'sequence': -100,
     'description': """This module allows processing of national ID applications.""",
     'category': 'Human Resources',
-    'website': 'https://www.example.com',
+    'website': 'hhttps://www.odoo.com/app/employees-features',
     'depends': ['base', 'mail', 'web'],
     'data': [
         'security/ir.model.access.csv',

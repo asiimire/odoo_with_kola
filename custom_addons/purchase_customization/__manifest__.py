@@ -5,6 +5,7 @@
     'depends': ['purchase'],
     'author': 'Asiimire Patricia',
     'category': 'Purchase',
+    'website': 'https://www.odoo.com/app/purchase',
     'description': """
     Custom extensions for the Purchase module:
     - Assign RFQ to multiple vendors
