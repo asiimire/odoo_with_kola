@@ -1,0 +1,35 @@
+<odoo>
+    <data>
+        <!-- View Inheritance for Purchase Order Form -->
+        <record id="view_purchase_order_form_inherit" model="ir.ui.view">
+            <field name="name">purchase.order.form.inherit</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="arch" type="xml">
+                <!-- Add vendor_ids after partner_id -->
+                <field name="partner_id" position="after">
+                    <field name="vendor_ids" widget="many2many_tags"/>
+                </field>
+
+                <!-- Add Notebook with Bids Tab -->
+                <notebook position="inside">
+                    <page string="Bids">
+                        <field name="bid_ids">
+                            <tree editable="bottom">
+                                <field name="vendor_id"/> <!-- Corrected field name -->
+                                <field name="bid_amount"/>
+                                <field name="bid_date"/>
+                            </tree>
+                        </field>
+                    </page>
+                </notebook>
+
+                <!-- Add winning_bid_id after partner_id -->
+                <field name="partner_id" position="after">
+                    <field name="winning_bid_id"/>
+                </field>
+            </field>
+        </record>
+
+    </data>
+</odoo>

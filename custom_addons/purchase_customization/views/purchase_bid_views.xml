@@ -1,0 +1,49 @@
+<odoo>
+    <record id="view_purchase_bid_tree" model="ir.ui.view">
+        <field name="name">purchase.bid.tree</field>
+        <field name="model">purchase.bid</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="rfq_id"/>
+                <field name="vendor_id"/>
+                <field name="bid_amount"/>
+                <field name="bid_date"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_purchase_bid_form" model="ir.ui.view">
+        <field name="name">purchase.bid.form</field>
+        <field name="model">purchase.bid</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="rfq_id"/>
+                        <field name="vendor_id"/>
+                        <field name="bid_amount"/>
+                        <field name="bid_date"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_purchase_bid" model="ir.actions.act_window">
+        <field name="name">Purchase Bids</field>
+        <field name="res_model">purchase.bid</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_purchase_request" model="ir.actions.act_window">
+        <field name="name">Purchase Requests</field>
+        <field name="res_model">purchase.request</field> <!-- Update this to your actual model if different -->
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menu Items -->
+    <menuitem id="menu_purchase_bid" name="Purchase Bids"
+              action="action_purchase_bid" parent="purchase.menu_procurement_management" sequence="20"/>
+    <menuitem id="menu_purchase_request" name="Purchase Requests"
+              action="action_purchase_request" parent="purchase.menu_procurement_management" sequence="10"/>
+</odoo>
