@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="national_id_application.list">
+      <field name="name">national_id_application list</field>
+      <field name="model">national_id_application.national_id_application</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="national_id_application.action_window">
+      <field name="name">national_id_application window</field>
+      <field name="res_model">national_id_application.national_id_application</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="national_id_application.action_server">
+      <field name="name">national_id_application server</field>
+      <field name="model_id" ref="model_national_id_application_national_id_application"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="national_id_application" id="national_id_application.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="national_id_application.menu_1" parent="national_id_application.menu_root"/>
+    <menuitem name="Menu 2" id="national_id_application.menu_2" parent="national_id_application.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="national_id_application.menu_1_list" parent="national_id_application.menu_1"
+              action="national_id_application.action_window"/>
+    <menuitem name="Server to list" id="national_id_application" parent="national_id_application.menu_2"
+              action="national_id_application.action_server"/>
+-->
+  </data>
+</odoo>
